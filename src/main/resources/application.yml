@@ -1,0 +1,30 @@
+server:
+  port: 9090
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: 'true'
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+  application:
+    name: gateway
+  jackson:
+    default-property-inclusion: NON_NULL
+
+jwt:
+  secret: secretkey
+  token:
+    validity: '86400000'
