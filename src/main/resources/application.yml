@@ -19,6 +19,7 @@ spring:
             allowedMethods:
               - GET
               - POST
+              - PUT
   application:
     name: gateway
   jackson:
